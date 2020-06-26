@@ -94,3 +94,12 @@ usi rek_y(usi j)
     if(j==0||j==1) return 1;
     return rek_y(j-1)+rek_y(j-2);
 }
+void finput(int(*matr)[N]) 
+{
+	ifstream in("in.txt", ios::in);
+	if (!in) return;
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+			in >> matr[i][j];
+	in.close();
+}
