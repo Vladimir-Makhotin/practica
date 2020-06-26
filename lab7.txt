@@ -41,3 +41,10 @@ int main()
 	getch();
 	return 0;
 }
+void input_matr(int (*matr)[N]) 
+{
+	cout << "Input massive:" << endl;
+	for (usi i = 0; i < N; i++)
+		for (usi j = 0; j < N; j++)
+			cin >> matr[i][j];
+}
