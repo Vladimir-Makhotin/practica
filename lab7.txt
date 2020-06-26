@@ -1,0 +1,43 @@
+#include <iostream>
+#include <conio.h>
+#include <fstream>
+#define N 5
+using namespace std;
+typedef unsigned short int usi;
+void input_matr(int (*matr)[N]);
+void output_matr(int *matr);
+void output_matr(int (*matr)[N]);
+void solve(int (*matr)[N], int *vect, usi &y);
+usi rek_y(usi j);
+void foutput(int *vect, usi &y);
+void finput(int (*matr)[N]);
+
+int main() 
+{
+	setlocale(LC_ALL, "Rus");
+	usi mode, Y(0);
+	int A[N][N], X[N];		
+	cout << "Заполнить массив вручную(1) или с помощью файла(2)?" << endl;
+	cout << "Ответ: ";
+	cin >> mode;
+	switch (mode) 
+	{
+	    case 1: 
+	    input_matr(A);
+		break;
+	    case 2: 
+		finput(A);
+		break;
+	    default: 
+		cout << "Error!!!";
+		getch();
+		return 1;
+	}
+	output_matr(A);
+	solve(A, X, Y);
+	output_matr(X);
+	cout << Y;
+	foutput(X, Y);
+	getch();
+	return 0;
+}
