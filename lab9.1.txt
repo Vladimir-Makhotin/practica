@@ -25,3 +25,25 @@ int main()
     output(n, m, &mass);
     delmass(n, &mass);
 }
+int** createmass(int& n, int& m)
+{
+    int** mass;
+
+    srand(time(NULL));
+    cout << "¬ведите размерность массива" << endl;
+    cin >> n >> m;
+    mass = new int* [n];
+    for (int i = 0; i < n; i++)
+    {
+        mass[i] = new int[m];
+        for (int j = 0; j < m; j++)
+        {
+            mass[i][j] = rand() % 100;
+            cout << mass[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    return mass;
+}
