@@ -57,3 +57,13 @@ void output_matr(int *matr)
 	}
 	cout << endl;
 }
+void output_matr(int (*matr)[N]) 
+{
+	cout << "Output massive:" << endl;
+	for (usi i = 0; i < N; i++) 
+	{
+		for (usi j = 0; j < N; j++)
+			cout << matr[i][j] << '\t';
+		cout << endl;
+	}
+}
