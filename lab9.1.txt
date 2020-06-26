@@ -92,3 +92,8 @@ void output(const int n, const int m, int*** mass)
         cout << endl;
     }
 }
+void delmass(const int n, int*** mass)
+{
+    for (int i = 0; i < n; i++) delete[] (*mass)[i];
+    delete[] *mass;
+}
