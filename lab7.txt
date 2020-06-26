@@ -103,3 +103,13 @@ void finput(int(*matr)[N])
 			in >> matr[i][j];
 	in.close();
 }
+void foutput(int *vect, usi &y) 
+{
+	ofstream out("out.txt", ios::out);
+	out << "Massive \'X\'" << endl;
+	for (usi i = 0; i < N; i++)
+		out << vect[i] << ' ';
+	out << endl;
+	out << "Y = " << y;
+	out.close();
+}
