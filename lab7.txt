@@ -88,3 +88,9 @@ void solve(int (*matr)[N], int *vect, usi &y)
 	}
 	if (check==true) y=1; else y=0;
 }
+usi rek_y(usi j) 
+{
+    if(j<0) return 0;
+    if(j==0||j==1) return 1;
+    return rek_y(j-1)+rek_y(j-2);
+}
