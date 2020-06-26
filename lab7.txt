@@ -67,3 +67,24 @@ void output_matr(int (*matr)[N])
 		cout << endl;
 	}
 }
+void solve(int (*matr)[N], int *vect, usi &y) 
+{
+	usi i,j; bool check=false; int mas[4];
+	for(j=0;j<N;j++)
+	{
+	    vect[j]=0;
+	}
+	for(i=0;i<N;i++)
+	{
+	    for(j=0;j<N;j++)
+	    {
+	        if(matr[i][j]>0) vect[j]=vect[j]+matr[i][j];
+	    }
+	}
+	for(j=0;j<N;j++)
+	{
+	    mas[j]=rek_y(j);
+	    if(vect[j]==mas[j]) check=true; else check=false;
+	}
+	if (check==true) y=1; else y=0;
+}
