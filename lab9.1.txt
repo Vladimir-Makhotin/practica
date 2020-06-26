@@ -66,3 +66,20 @@ cell searchel(const int n, const int m, int*** mass)
     el.j = jk;
     return el;
 }
+int** solve(const int n, const int m, int*** mass, const cell el)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int t = (*mass)[i][0];
+        (*mass)[i][0] = (*mass)[i][el.j];
+        (*mass)[i][el.j] = t;
+    }
+    for (int i = 0; i < m; i++)
+    {
+        int t = (*mass)[0][i];
+        (*mass)[0][i] = (*mass)[el.i][i];
+        (*mass)[el.i][i] = t;
+    }
+
+    return *mass;
+}
