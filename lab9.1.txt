@@ -1,0 +1,27 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+struct cell
+{
+    int i;
+    int j;
+};
+
+int** createmass(int& n, int& m);
+cell searchel(const int n, const int m, int*** mass);
+int** solve(const int n, const int m, int*** mass, const cell el);
+void output(const int n, const int m, int*** mass);
+void delmass(const int n, int*** mass);
+
+int main()
+{
+    setlocale(LC_ALL, "ru-RU");
+    int n, m;
+    int** mass = createmass(n, m);
+    cell k = searchel(n, m, &mass);
+    mass = solve(n, m, &mass, k);
+    output(n, m, &mass);
+    delmass(n, &mass);
+}
